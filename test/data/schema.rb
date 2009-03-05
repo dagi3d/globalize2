@@ -1,8 +1,14 @@
 ActiveRecord::Schema.define do
   
   create_table :blogs, :force => true do |t|
-    t.string      :description
   end
+  
+  create_table :blog_translations, :force => true do |t|
+    t.string :locale
+    t.references :blog
+    t.string  :description
+  end
+  
 
   create_table :posts, :force => true do |t|
     t.references :blog

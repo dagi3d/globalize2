@@ -41,11 +41,11 @@ module Globalize
           end
 
           def locale=(locale)
-            @@locale = locale
+            write_inheritable_attribute(:locale, locale)
           end
           
           def locale
-            (defined?(@@locale) && @@locale) || I18n.locale
+            read_inheritable_attribute(:locale) || I18n.locale
           end          
         end
 

@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
 end
 
 class Blog < ActiveRecord::Base
+  translates :description
   has_many :posts, :order => 'id ASC'
 end
 
